@@ -1,0 +1,12 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+int main()
+{
+	cout<<"hola mundo";
+	cout<<"bolivianos es hado propicio";
+	getch();
+	return 0;
+}
