@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	cout<<"hola mundo";
+	cout<<"hola mundo\n";
 	cout<<"bolivianos es hado propicio";
 	getch();
 	return 0;
