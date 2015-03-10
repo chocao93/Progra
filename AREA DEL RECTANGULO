@@ -1,0 +1,21 @@
+// CUADRADO.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	float A,B,H;
+	cout<<"ingrese Base:";
+	cin>> B;
+	cout<<"ingrese altura:";
+	cin>> H;
+	A=(B*H);
+	cout<< "El area del rectangulo es:"<<A;
+	getch();
+	return 0;
+}
