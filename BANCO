@@ -1,0 +1,21 @@
+// AREA E IMPUESTO.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	float montotot,monto;
+	cout<<"ingrese el monto del dpf: ";
+	cin>>monto;
+	if (monto>20000)
+		montotot=(monto+monto*.02);
+	else
+		montotot=(monto+monto*.01);
+	cout<<"el monto a pagar es: "<<montotot;
+	getch();
+}
