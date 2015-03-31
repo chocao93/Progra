@@ -1,0 +1,53 @@
+// Menu.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+
+using namespace std;
+
+void main ()
+{
+   int opcion,a,b,r;
+   do {
+	   cout<<"\t MENU";
+	   cout<<"\t ----";
+	   cout<<"a) Calculo del area de un rectangulo ";
+	   cout<<"b)calculo de impuesto ";
+	   cout<<"c)Calculo de sueldos";
+	   cout<<"d)Rango ";
+	   cout<<"Elige una opcion: ";
+	   cin>>opcion;
+	   switch(opcion)
+		   {
+			   case 1:cout<<"ingrese la base del rectangulo: ";
+                     cin>>a;
+					 cout<<"ingrese la altura del rectangulo: ";
+					 cin>>b;
+					 r=(a*b);
+				     cout<<"El area del rectangulo es: "<<r;break;
+			   case 2:cout<<"Ingrese el sueldo del gerente: ";
+					 cin>>a;
+					 r=(a*0.13);
+					 cout<<"El impuesto a pagar es: "<<r;break;
+			   case 3:cout<<"Ingrese las horas trabajadas: ";
+					 cin>>a;
+					 cout<<"ingrese el pago por hora trabajada";
+					 cin>>b;
+					 r=(a*b);
+					 cout<<"El sueldo a pagar es de: "<<r;break;
+			   case 4:cout<<"Ingrese el numero de estudiantes: ";
+					 cin>>a;
+					 if(a<10 & a>0)
+						 cout<<"El numero se encuentra en el rango";
+					 else
+						 cout<<"el numero esta fuera de rango ";break;
+		       default:cout<<"Opcion invalida";
+		   }
+   } while(opcion != 0);
+getch();
+system("els");
+
+}
