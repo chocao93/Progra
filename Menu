@@ -12,13 +12,13 @@ void main ()
 {
    int opcion,a,b,r;
    do {
-	   cout<<"\t MENU";
-	   cout<<"\t ----";
-	   cout<<"a) Calculo del area de un rectangulo ";
-	   cout<<"b)calculo de impuesto ";
-	   cout<<"c)Calculo de sueldos";
-	   cout<<"d)Rango ";
-	   cout<<"Elige una opcion: ";
+	   cout<<"\t MENU"<<endl;
+	   cout<<"\t ----"<<endl;
+	   cout<<"1) Calculo del area de un rectangulo "<<endl;
+	   cout<<"2)calculo de impuesto "<<endl;
+	   cout<<"3)Calculo de sueldos"<<endl;
+	   cout<<"4)Rango "<<endl;
+	   cout<<"Elige una opcion: "<<endl;
 	   cin>>opcion;
 	   switch(opcion)
 		   {
@@ -51,3 +51,4 @@ getch();
 system("els");
 
 }
+
