@@ -1,0 +1,41 @@
+// exposicion.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+ 
+using namespace std;
+int main()
+{
+	int numero;
+	cout<<"Introduzca el numero del dado: ";
+	cin>>numero;
+
+	switch (numero)
+	{
+	case 1:cout<<"En la cara opuesta esta el SEIS";
+		   cin>>numero;
+		   break;
+	case 2:cout<<"En la cara opuesta esta el CINCO";
+		   cin>>numero;
+		   break;
+	case 3:cout<<"En la cara opuesta esta el CUATRO";
+		   cin>>numero;
+		   break;
+	case 4:cout<<"En la cara opuesta esta el TRES";
+		   cin>>numero;
+		   break;
+	case 5:cout<<"En la cara opuesta esta el DOS";
+		   cin>>numero;
+		   break;
+	case 6:cout<<"En la cara opuesta esta el UNO";
+		   cin>>numero;
+		   break;
+	default:cout<<"ERROR: numero incorrecto. ";
+	}
+  return 0;
+}
+
+
