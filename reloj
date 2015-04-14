@@ -1,0 +1,32 @@
+// reloj.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+#include <time.h>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	int a,b,c,t;
+	for (a=0;a<24;a++)
+	{
+		for(b=0;b<60;b++)
+		{
+			for(c=0;c<60;c++)
+			{
+				cout<<"\r"<<a<<b<<c;
+				cout.flush();
+				t=time(0);
+				while (t==time(0)) {}
+			}
+		}
+	}
+	getch();
+	return 0;
+}
+
+
