@@ -1,0 +1,25 @@
+// choco.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+ 
+using namespace std;
+
+int fac(int n)
+{
+	int f=1;
+	for(int i=1;i<=n;i++)
+	{
+	  f=f*i;
+	}
+	return f;
+}
+int main ()
+{ 
+	int n,fact;
+	cin>> n;
+	fact = fac(n);
+	cout << fact <<endl; 
+	return 0;
+}
+
