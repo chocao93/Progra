@@ -1,0 +1,312 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <iomanip>
+#include <stdio.h>
+
+
+using namespace std;
+void cono_proye();
+void inf_fo(int &op);
+void menu_prin();
+void ele_pro(int &pro);
+void ingreso(long double &ing);
+int urb_vill (int &op);
+int spo_clo (int &op);
+int fam_eve (int &op);
+void inver (long double &mon1,long double &mon2,long double &mon3, long double ing, int pro);
+
+
+void main()
+{system ("color 4F");
+	int o=1,op,opcio=0,pro;
+ long double mon1=300000,mon2=30000,mon3=200000,ing;
+ do
+        { system ("cls");
+			cout<<"\n\n****** Fondo de Inversiones Masivas ******\n\n";
+			cout<<"El Fondo de Inversiones Masivas es un programa hecho para recibir inversiones\nsobre uno o varios proyectos a eleccion del cliente, siendo patrocinados por las mismas empresas que requieran ese capital extra para iniciar/finalizar el\nmencionado proyecto, desde la construccion de un edificio  a la elaboracion de\nuna nueva linea de ropas. Este programa esta dirigido a aquellas personas\ncansadas de tener dinero guardado e inutil, despertando el instinto de querer\nmas. Dependiendo del porcentaje invertido en cierto proyecto disponible, sera\nposible convertirse en un socio significativo de la empresa la cual patrocina\ndicho proyecto. \n\n\n\n";
+         cout<<"En la plataforma virtual del Fondo de inversiones masivas usted puede:\n\n";
+         cout<<"1. Conocer nuestros proyectos. \n";
+         cout<<"2. Invertir. \n";
+         cout<<"0. Salir.\n";
+         cout<<"Seleccione la opcion que desee:";
+         cin>>op;
+         switch(op)
+                  {
+		           case 1:
+			           { while(o==1)
+						{system ("cls");
+						  ele_pro(pro);
+						  if(pro==1)
+							  urb_vill (op);
+						  if(pro==2)
+							  spo_clo (op);
+						  if(pro==3)
+							  fam_eve (op);
+						}
+						 break;
+			            }
+				   case 2:
+						 {system ("cls");
+						  ele_pro(pro);
+						  system ("cls");
+						  ingreso(ing);
+						  system ("cls");
+						  inver (mon1,mon2,mon3,ing,pro);
+						  break;
+					   }
+				  
+				   default:
+						   cout<<"\n\nValor equivocado.\n\n";
+		           }
+		}while(op!=0);
+
+ }
+
+void inver (long double &mon1,long double &mon2,long double &mon3, long double ing, int pro)
+{	long double ing1,ing2,k;
+switch(pro)
+{case 1:
+ {system ("cls");
+ ing1=ing-ing*0.01;
+ ing2=ing-ing1;
+ mon1=mon1-ing;
+ k=(ing/mon1)*100;
+ cout<<"Monto proyectado incialmente: 300000$ \n"<<"Monto Invertido: "<<ing<<"$\nImpuesto a la transaccion descontado por la ASFI:"<<ing2<<"$\nMonto aportado: "<<ing1<<"$\nMonto necesario para concluir el proyecto: "<<mon1<<"$"<<"\nEl porcentaje de su inversion sobre el monto total es de: "<<k;
+ getch();
+ break;
+ }
+ case 2:
+ {system ("cls");
+ ing1=ing-ing*0.01;
+ ing2=ing-ing1;
+ mon2=mon2-ing;
+ k=(ing/mon2)*100;
+ cout<<"Monto proyectado incialmente: 30000$ \n"<<"Monto Invertido: "<<ing<<"$\nImpuesto a la transaccion descontado por la ASFI:"<<ing2<<"$\nMonto aportado: "<<ing1<<"$\nMonto necesario para concluir el proyecto: "<<mon2<<"$"<<"\nEl porcentaje de su inversion sobre el monto total es de: "<<k;
+ getch();
+ break;
+}
+ case 3:
+ {system ("cls");
+ ing1=ing-ing*0.01;
+ ing2=ing-ing1;
+ mon3=mon3-ing;
+ k=(ing/mon3)*100;
+ cout<<"Monto proyectado incialmente: 200000$ \n"<<"Monto Invertido: "<<ing<<"$\nImpuesto a la transaccion descontado por la ASFI:"<<ing2<<"$\nMonto aportado: "<<ing1<<"$\nMonto necesario para concluir el proyecto: "<<mon3<<"$"<<"\nEl porcentaje de su inversion sobre el monto total es de: "<<k;
+ getch();
+ break;
+ }
+ }
+}
+void ele_pro(int &pro)
+{int opc;
+      cout<<"Proyectos disponibles \n\n";
+       cout<<"1. Urubo Village. \n";
+       cout<<"2. Forever Sports Clothing. \n";
+	   cout<<"3. FAMA eventos.\n";
+       cout<<"0. Atras.\n";
+	   cout<<"Elija el opcion que desee: ";
+       cin>>opc;
+	   if((opc<0)||(opc>3))
+	 {do
+	 {system ("cls");
+	  cout<<"Opcion no valida.\n";
+	   cout<<"1. Urubo Village. \n";
+       cout<<"2. Forever Sport Clothing\n";
+	   cout<<"3. Fama Eventos\n";
+       cout<<"0. Atras.\n";
+	   cout<<"Elija el opcion que desee: ";
+	  cin>>opc;
+	 }while((opc<0)||(opc>3));
+	   }
+	   if(opc==0)
+	 {main();
+	 }
+       switch(opc)
+       {case 1:
+	    {pro=opc;
+		 break;
+		}
+	    case 2:
+	    {pro=opc;
+	     break;
+	    }
+	    case 3:
+		{pro=opc;
+		 break;
+		}
+	   }
+}
+void ingreso(long double &ing)
+{int opcio;
+ cout<<"Monedas habilitadas para realizar la inversion.\n";
+ cout<<"1. Bolivianos.\n";
+ cout<<"2. Euros.\n";
+ cout<<"3. Dolares.\n";
+ cout<<"0. Ir al menu principal.\n";
+ cout<<"Selecciones la opcion que desee:";
+ cin>>opcio;
+ if((opcio<0)||(opcio>3))
+ {do
+  { system ("cls");
+	  cout<<"\nOpcion invalida.\n";
+   cout<<"1. Bolivianos.\n";
+   cout<<"2. Euros.\n";
+   cout<<"3. Dolares.\n";
+   cout<<"0. Ir al menu principal.\n";
+   cout<<"Selecciones la opcion que desee:";
+   cin>>opcio;
+  }while((opcio<0)||(opcio>3));
+ }		      
+				
+			                                       switch(opcio)
+			                                                        {case 1:
+			                                                                {cout<<"\n\nEscriba el monto que desee invertir Bs: ";
+												                             cin>>ing;
+																				ing=ing/6.96;
+			                                                                 break;
+																			}
+																	 case 2:
+				                                                            {cout<<"\n\nEscriba el monto que desee invertir €: ";
+												                             cin>>ing;
+													                     	ing=ing*1.08765;
+			                                                                 break;
+																			}
+																	 case 3:
+				                                                            {cout<<"\n\nEscriba el monto que desee invertir $: ";
+												                             cin>>ing;
+																			 ing=ing;
+				                                                             break;
+																			}
+																	  case 0:
+			                                                                {main();
+			                                                                 break;
+																			}
+}
+}
+int urb_vill (int &op)
+{int o,pro=1;
+ long double mon1=300000,mon2=30000,mon3=200000,ing;
+ system ("cls");
+  cout<<"URUBO VILLAGE\nUn proyecto urbanistico de 198 hectareas que se presenta como el mas grande \nde la atractiva zona del Urubo y que incluye la construccion de un puente de \n400 metros de longitud que costara $us 12 millones.\nEl proyecto es parte de una sociedad del Grupo Roda y del Grupo Urubo Golf, que\nes representado por Luis Carlos Kinn.\nCristobal Roda, presidente del Grupo Industrial Roda, manifesto que luego de dos años de idealizar este proyecto se animaron a emprender Urubo Village, que\nsegun afirmo Roda, sera el proyecto inmobiliario más grande de Santa Cruz.\nDestaco que el proyecto inmobiliario estara ubicado a 5,8 kilometros de la plaza principal de la capital. Esta mas cerca del centro que cualquier urbanizacion\nen el Urubo. \nSe construiran 23 edificios (de cinco pisos) que en conjunto tendran 1.300\ndepartamentos desde 135 hasta 200 m2. En el lugar ya se iniciaron las obras de\npavimentacion y de paisajismo. Inversion de $us 12 millones que sera financiada\npor Urubo Village. Kinn explico que este prestamo sera devuelto por el municipio de Porongo a traves de una tasa propuente. Sera de 400 metros de largo y de\ncuatro vias (dos de ida y dos de vuelta). Kinn destaco que el proyecto tiene un\ndiseño bastante moderno, que incorporara una laguna artificial (13,8 hectareas), y la distribucion de los terrenos se asemejara a las palmeras de Dubai. Cada\nterreno tendra su propio embarcadero con acceso a un club house, explico.\nAdemas habra canchas de tenis, de futbol y un club hipico. En la ultima fase del proyecto se desarrollara el centro empresarial Torres Toborochi (tres torres de 23 pisos cada una), que incluira un hotel cinco estrellas con helipuerto.\nCarlos Hugo Sosa, secretario de Obras Publicas de la Gobernacion de Santa Cruz, indico que considerando que el puente se empezara a construir a mediados de 2016, todavia estan a tiempo para la solicitud de la licencia ambiental, que demora unos seis meses en aprobarse. Este año tenemos que cumplir con toda la normativa, dijo Roda. El puente estara construido a finales de 2017 \nMonto total requerido: 300.000$\n\n\n\n\n";
+  cout<<"1. Invertir.\n";
+  cout<<"2. Ir atras.\n";
+ cout<<"3. Ir a Menu principal. \n";
+ cout<<" Seleccione la opcion que desee:";
+ cin>>o;
+ if((o<1)||(o>3))
+	 do
+	 {system ("cls");
+	  cout<<"Opcion no valida.\n";
+	  cout<<"1. Invertir.\n";
+	  cout<<"2. Ir atras.\n";
+      cout<<"3. Ir a Menu principal. \n";
+	  cout<<" Seleccione la opcion que desee:";
+	  cin>>o;
+	 }while((o<1)||(o>3));
+	 switch(o)
+	 {case 1:
+	  {system ("cls");
+						  ingreso(ing);
+						  system ("cls");
+						  inver (mon1,mon2,mon3,ing,pro);
+	   break;
+	  }
+	 case 2:
+	  {system ("cls");
+	  return o=1;
+	   break;
+	  }
+	 case 3:
+	   { op=0;
+		   main();
+		 break;
+	  }
+	 }
+	 
+}
+int spo_clo (int &op)
+{int o,pro=1;
+ long double mon1=300000,mon2=1000000,mon3=100000000,ing;
+ system ("cls");
+  cout<<"O	Forever Sports Clothing.\n\nUna nueva empresa liderada por recien graduados de la UPSA de la carrera Diseño de Modas, enfocada en la elaboracion de ropa deportiva. Sus productos consisten en poleras de secado rapido, ajustadas, gorras, shorts, chamarras impermeables, tops y calzas. Precisan de financiamiento para el alquiler de un galpon, un\nlocal, y la compra de la materia prima y la maquinaria. \nMonto Inicial requerido: 30.000$\n\n\n\n\n";
+  cout<<"1. Invertir.\n";
+  cout<<"2. Ir atras.\n";
+ cout<<"3. Ir a Menu principal. \n";
+ cout<<" Seleccione la opcion que desee:";
+ cin>>o;
+ if((o<1)||(o>3))
+	 do
+	 {system ("cls");
+	  cout<<"Opcion no valida.\n";
+	  cout<<"1. Invertir.\n";
+	  cout<<"2. Ir atras.\n";
+      cout<<"3. Ir a Menu principal. \n";
+	  cout<<" Seleccione la opcion que desee:";
+	  cin>>o;
+	 }while((o<1)||(o>3));
+	 switch(o)
+	 {case 1:
+	  {system ("cls");
+						  ingreso(ing);
+						  system ("cls");
+						  inver (mon1,mon2,mon3,ing,pro);
+	   break;
+	  }
+	 case 2:
+	  {system ("cls");
+	  return o=1;
+	   break;
+	  }
+	 case 3:
+	   { op=0;
+		   main();
+		 break;
+	  }
+	 }
+	 }
+int fam_eve (int &op)
+{int o,pro=1;
+ long double mon1=300000,mon2=1000000,mon3=100000000,ing;
+ system ("cls");
+  cout<<"FAMA Eventos\n\n Somos una empresa dedicada a ofrecer equipos de sonido, iluminacion, proyecciones, y demas para amenizar eventos sociales. Requerimos de un apoyo extra para\nla compra de nuevos equipos electronicos, como ser: luces LED, cabina de DJ,\namplificadores de sonido, televisores de gran tamaño y computadoras. Nuestro\nnegocio se basa en el alquiler de los equipos adquiridos, acumulando una\ncantidad monetaria mayor a la del capital inicial. \nMonto requerido: 200.000$ \n\n\n\n\n";
+  cout<<"1. Invertir.\n";
+  cout<<"2. Ir atras.\n";
+ cout<<"3. Ir a Menu principal. \n";
+ cout<<" Seleccione la opcion que desee:";
+ cin>>o;
+ if((o<1)||(o>3))
+	{ do
+	 {system ("cls");
+	  cout<<"Opcion no valida.\n";
+	  cout<<"1. Invertir.\n";
+	  cout<<"2. Ir atras.\n";
+      cout<<"3. Ir a Menu principal. \n";
+	  cout<<" Seleccione la opcion que desee:";
+	  cin>>o;
+	 }while((o<1)||(o>3));
+ }
+
+	 switch(o)
+	 {case 1:
+	  {system ("cls");
+						  ingreso(ing);
+						  system ("cls");
+						  inver (mon1,mon2,mon3,ing,pro);
+	   break;
+	  }
+	 case 2:
+	  {system ("cls");
+	  return o=1;
+	   break;
+
+	  }
+	 case 3:
+	   { op=0;
+		   main();
+		 break;
+	  }
+	 }
+	 }
+
